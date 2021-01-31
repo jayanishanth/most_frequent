@@ -1,0 +1,17 @@
+import operator
+def most_frequent(string):
+ d=dict()
+ for key in string:
+  if key not in d:
+   d[key]=1
+  else:
+   d[key]+=1
+ return d
+d=most_frequent('Mississippi') 
+sorted_d = dict(sorted(d.items(), key=operator.itemgetter(1),reverse=True)) 
+
+#print(most_frequent('Mississippi'))  
+#output:{'M': 1, 'i': 4, 's': 4, 'p': 2}
+print(sorted_d)
+
+#output:{'i': 4, 's': 4, 'p': 2, 'M': 1}
